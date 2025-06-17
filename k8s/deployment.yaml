@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cyetech-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cyetech
+  template:
+    metadata:
+      labels:
+        app: cyetech
+    spec:
+      containers:
+      - name: cyetech
+        image: <your-ecr-uri> # Will be replaced automatically by GitHub Actions
+        ports:
+        - containerPort: 8080
