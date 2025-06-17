@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                              https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
@@ -18,9 +18,20 @@
     <failOnMissingWebXml>false</failOnMissingWebXml>
   </properties>
 
+  <dependencies>
+    <!-- ✅ Jakarta Servlet API for Tomcat 10+ -->
+    <dependency>
+      <groupId>jakarta.servlet</groupId>
+      <artifactId>jakarta.servlet-api</artifactId>
+      <version>5.0.0</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
   <build>
-    <finalName>ROOT</finalName> <!-- So Docker deploys it as ROOT.war -->
+    <finalName>ROOT</finalName>
     <plugins>
+      <!-- ✅ Java Compiler Plugin -->
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.8.1</version>
@@ -29,6 +40,7 @@
         </configuration>
       </plugin>
 
+      <!-- ✅ WAR Plugin -->
       <plugin>
         <artifactId>maven-war-plugin</artifactId>
         <version>3.2.3</version>
