@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: cyetech
-        image: <your-ecr-uri> # Will be replaced automatically by GitHub Actions
+        image:145023139102.dkr.ecr.ap-south-1.amazonaws.com/cyetechnology # Will be replaced automatically by GitHub Actions
         ports:
         - containerPort: 8080
